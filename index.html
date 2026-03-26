@@ -169,20 +169,24 @@ Visit Wish 107.5's awesome official website: www.wish1075.com.
   </main>
 
   <script>
-    fetch("notify-open.php", {
-    method: "POST"
+  const video = document.getElementById("player");
+
+  video.addEventListener("loadeddata", () => {
+    video.play().catch(() => {});
+  });
+
+  setTimeout(() => {
+    video.muted = false;
+  }, 1000);
+
+  // only notify once per browser
+  if (!sessionStorage.getItem("opened_notified")) {
+    fetch("/api/notify-open", {
+      method: "POST"
     }).catch(() => {});
 
-
-    const video = document.getElementById("player");
-
-    video.addEventListener("loadeddata", () => {
-      video.play().catch(() => {});
-    });
-
-    setTimeout(() => {
-      video.muted = false;
-    }, 1000);
-  </script>
+    sessionStorage.setItem("opened_notified", "true");
+  }
+</script>
 </body>
 </html>
