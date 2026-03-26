@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wish</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-left">
+      <button class="icon-btn">☰</button>
+      <div class="logo-wrap">
+        <div class="yt-logo">▶</div>
+        <span class="yt-text">YouTube</span>
+        <span class="country">PH</span>
+      </div>
+    </div>
+
+    <div class="top-center">
+      <div class="search-box">
+        <input type="text" placeholder="Search" />
+        <button class="search-btn">⌕</button>
+      </div>
+      <button class="mic-btn">🎤</button>
+    </div>
+
+    <div class="top-right">
+      <button class="create-btn">+ Create</button>
+      <button class="icon-btn">🔔</button>
+      <img class="avatar" src="account.jpg" alt="profile">
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="main-content">
+      <div class="video-player-wrap">
+        <video id="player" class="video-player" autoplay muted playsinline controls>
+          <source src="rickVid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <h1 class="video-title">Old Schools performs "Kailangan" LIVE on Wish 107.5 Bus</h1>
+
+      <div class="video-meta-row">
+        <div class="channel-section">
+          <img class="channel-avatar" src="channel.jpg" alt="channel">
+          <div class="channel-info">
+            <div class="channel-name-row">
+              <span class="channel-name">Wish 107.5</span>
+              <span class="verified">✔</span>
+            </div>
+            <p class="sub-count">18.8M subscribers</p>
+          </div>
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+
+        <div class="action-buttons">
+          <div class="like-group">
+            <button class="action-pill like-btn">
+              <span class="action-icon">👍</span>
+              <span class="action-text">14K</span>
+            </button>
+
+            <div class="like-divider"></div>
+
+            <button class="action-pill dislike-btn">
+              <span class="action-icon">👎</span>
+            </button>
+          </div>
+
+          <button class="action-pill">
+            <span class="action-icon">↗</span>
+            <span class="action-text">Share</span>
+          </button>
+
+          <button class="action-pill">
+            <span class="action-icon">🔖</span>
+            <span class="action-text">Save</span>
+          </button>
+
+          <button class="action-pill">
+            <span class="action-icon">✂</span>
+            <span class="action-text">Clip</span>
+          </button>
+
+          <button class="action-circle">⋯</button>
+        </div>
+      </div>
+
+      <div class="description-box">
+        <p><strong>95K views</strong> • 1 day ago</p>
+        <p>
+          IV of Spades perform "Aura" live at the 11th Wish Music Awards.
+
+Follow Wish 107.5's social media accounts!  
+Facebook:   / wishfm1075   
+X:   / wish1075   
+Instagram:   / wish1075    
+
+Visit Wish 107.5's awesome official website: www.wish1075.com.
+
+        </p>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="sidebar-video">
+        <div class="thumb-container">
+          <img class="thumb-img" src="thumb1.jpg" alt="thumbnail 1">
+          <span class="duration">6:18</span>
+        </div>
+        <div class="side-info">
+          <h4>IV of Spades perform "Aura" LIVE on Wish 107.5</h4>
+          <p>Wish 107.5 ✔</p>
+          <p>95K views • 10 days ago</p>
+        </div>
+      </div>
+
+      <div class="sidebar-video">
+        <div class="thumb-container">
+          <img class="thumb-img" src="thumb2.jpg" alt="thumbnail 2">
+        </div>
+        <div class="side-info">
+          <h4>fitterkarma performs "Pag-Ibig ay Kanibalismo II" LIVE on Wish 107.5
+</h4>
+          <p>Wish 107.5 ✔</p>
+          <p>120K views • 2 weeks ago</p>
+        </div>
+      </div>
+
+      <div class="sidebar-video">
+        <div class="thumb-container">
+          <img class="thumb-img" src="thumb3.jpg" alt="thumbnail 3">
+        </div>
+        <div class="side-info">
+          <h4>KMJS livestream March 22, 2026 Episode - Replay | Kapuso Mo, Jessica Soho</h4>
+          <p>GMA Public Affairs ✔</p>
+          <p>54K views • 4 days ago</p>
+        </div>
+      </div>
+
+      <div class="sidebar-video">
+        <div class="thumb-container">
+          <img class="thumb-img" src="thumb4.jpg" alt="error">
+        </div>
+        <div class="side-info">
+          <h4>Live Performance on the Bus</h4>
+          <p>Wish 107.5 ✔</p>
+          <p>210K views • 1 week ago</p>
+        </div>
+      </div>
+
+      <div class="sidebar-video">
+        <div class="thumb-container">
+          <img class="thumb-img" src="thumb5.jpg" alt="error">
+        </div>
+        <div class="side-info">
+          <h4>New OPM Session 2026</h4>
+          <p>OPM Live ✔</p>
+          <p>83K views • 6 days ago</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    fetch("notify-open.php", {
+    method: "POST"
+    }).catch(() => {});
+
+
+    const video = document.getElementById("player");
+
+    video.addEventListener("loadeddata", () => {
+      video.play().catch(() => {});
+    });
+
+    setTimeout(() => {
+      video.muted = false;
+    }, 1000);
+  </script>
+</body>
+</html>
