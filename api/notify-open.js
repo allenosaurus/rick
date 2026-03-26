@@ -3,7 +3,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ ok: false, message: "Method not allowed" });
   }
 
-  const webhook = process.env.https://discord.com/api/webhooks/1486718855253463150/8eqdZh_zUws98I_Gy9qqjL6PRtoBm1tjAPLuio5V2iQiOE1CdMxCQGdHfErK0F2JrWTS;
+  const webhook = process.env.DISCORD_WEBHOOK_URL;
 
   if (!webhook) {
     return res.status(500).json({
