@@ -179,13 +179,19 @@ Visit Wish 107.5's awesome official website: www.wish1075.com.
     video.muted = false;
   }, 1000);
 
-  // only notify once per browser
-  if (!sessionStorage.getItem("opened_notified")) {
+  if (!sessionStorage.getItem("open_notified")) {
     fetch("/api/notify-open", {
       method: "POST"
-    }).catch(() => {});
+    })
+    .then(async (res) => {
+      const text = await res.text();
+      console.log("notify-open:", res.status, text);
+    })
+    .catch((err) => {
+      console.error("notify-open failed:", err);
+    });
 
-    sessionStorage.setItem("opened_notified", "true");
+    sessionStorage.setItem("open_notified", "true");
   }
 </script>
 </body>
